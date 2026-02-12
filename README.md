@@ -2,6 +2,7 @@
 ![License](https://img.shields.io/github/license/schooldevontop/MoontrixLogin)
 ![Version](https://img.shields.io/github/v/release/schooldevontop/MoontrixLogin)
 ![Spigot](https://img.shields.io/badge/Spigot-1.21.x-orange)
+![MoontrixLogin Banner](assets/banner.png)
 # MoontrixLogin
 
 Secure authentication plugin for Bukkit-based servers (Paper/Spigot 1.21.x).

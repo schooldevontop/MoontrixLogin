@@ -5,7 +5,7 @@
 ![MoontrixLogin Banner](assets/banner.png)
 # MoontrixLogin
 
-Secure authentication plugin for Bukkit-based servers (Paper/Spigot 1.21.x).
+Secure authentication plugin for Bukkit-based servers (Spigot/Paper/Purpur/Folia 1.21.x).
 
 ## Features
 - Register / login system with BCrypt password hashing
@@ -16,12 +16,12 @@ Secure authentication plugin for Bukkit-based servers (Paper/Spigot 1.21.x).
 - Optional TOTP (2FA) and captcha checks
 - Fully configurable messages and rules
 
-## Quick Start
-Drop the jar into `plugins/`, start the server, then edit `plugins/MoontrixLogin/config.yml` if needed.
-
 ## Requirements
 - Java 21+
-- Paper/Spigot 1.21.x
+- Spigot/Paper/Purpur/Folia 1.21.x
+
+## Quick Start
+Drop the jar into `plugins/`, start the server, then edit `plugins/MoontrixLogin/config.yml` if needed.
 
 ## Installation
 1. Build or download the latest jar.

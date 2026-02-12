@@ -15,6 +15,9 @@ Secure authentication plugin for Bukkit-based servers (Paper/Spigot 1.21.x).
 - Optional TOTP (2FA) and captcha checks
 - Fully configurable messages and rules
 
+## Quick Start
+Drop the jar into `plugins/`, start the server, then edit `plugins/MoontrixLogin/config.yml` if needed.
+
 ## Requirements
 - Java 21+
 - Paper/Spigot 1.21.x

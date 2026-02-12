@@ -1,0 +1,56 @@
+﻿# MoontrixLogin messages
+registration:
+  register_request: '&8[&bMoontrix&fLogin&8]&r &fPlease register using: /register <password> <verifyPassword>'
+  command_usage: '&8[&bMoontrix&fLogin&8]&r &fUsage: /register <password> <verifyPassword>'
+  success: '&8[&bMoontrix&fLogin&8]&r &fRegistration completed successfully.'
+  disabled: '&8[&bMoontrix&fLogin&8]&r &fRegistration is currently unavailable.'
+  name_taken: '&8[&bMoontrix&fLogin&8]&r &fThis username is already registered.'
+
+password:
+  match_error: '&8[&bMoontrix&fLogin&8]&r &fPasswords do not match.'
+  unsafe_password: '&8[&bMoontrix&fLogin&8]&r &fPassword does not meet security requirements.'
+  wrong_length: '&8[&bMoontrix&fLogin&8]&r &fPassword length is invalid.'
+
+login:
+  command_usage: '&8[&bMoontrix&fLogin&8]&r &fUsage: /login <password> [totp]'
+  wrong_password: '&8[&bMoontrix&fLogin&8]&r &fInvalid password.'
+  success: '&8[&bMoontrix&fLogin&8]&r &fLogin successful.'
+  login_request: '&8[&bMoontrix&fLogin&8]&r &fPlease log in using: /login <password>'
+  timeout_error: '&8[&bMoontrix&fLogin&8]&r &fLogin timed out.'
+
+error:
+  unregistered_user: '&8[&bMoontrix&fLogin&8]&r &fAccount is not registered.'
+  denied_command: '&8[&bMoontrix&fLogin&8]&r &fYou must login first.'
+  denied_chat: '&8[&bMoontrix&fLogin&8]&r &fYou must login first.'
+  not_logged_in: '&8[&bMoontrix&fLogin&8]&r &fYou are not logged in.'
+  no_permission: '&8[&bMoontrix&fLogin&8]&r &fYou do not have permission.'
+  unexpected_error: '&8[&bMoontrix&fLogin&8]&r &fAn unexpected error occurred.'
+  login_wait: '&8[&bMoontrix&fLogin&8]&r &fToo many attempts. Please wait.'
+  ip_changed: '&8[&bMoontrix&fLogin&8]&r &fSession invalidated due to IP change.'
+  shadow_ban: '&8[&bMoontrix&fLogin&8]&r &fLogin temporarily restricted due to suspicious activity.'
+
+unregister:
+  success: '&8[&bMoontrix&fLogin&8]&r &fAccount has been deleted.'
+  command_usage: '&8[&bMoontrix&fLogin&8]&r &fUsage: /unregister <password>'
+
+email:
+  added: '&8[&bMoontrix&fLogin&8]&r &fVerification code sent. Use /verification <code>.'
+  changed: '&8[&bMoontrix&fLogin&8]&r &fEmail verified and updated.'
+  recover: '&8[&bMoontrix&fLogin&8]&r &fRecovery code sent. Use /email setpassword <code> <newPassword>.'
+  verify_rate_limited: '&8[&bMoontrix&fLogin&8]&r &fToo many verification requests. Try again in %seconds% seconds.'
+  recover_rate_limited: '&8[&bMoontrix&fLogin&8]&r &fToo many recovery requests. Try again in %seconds% seconds.'
+  reset_success: '&8[&bMoontrix&fLogin&8]&r &fPassword reset successfully.'
+  reset_failed: '&8[&bMoontrix&fLogin&8]&r &fThe reset code is invalid or expired.'
+  mail_disabled: '&8[&bMoontrix&fLogin&8]&r &fEmail service is disabled.'
+
+captcha:
+  message: '&8[&bMoontrix&fLogin&8]&r &fCaptcha: %code%'
+  success: '&8[&bMoontrix&fLogin&8]&r &fCaptcha verified.'
+  failed: '&8[&bMoontrix&fLogin&8]&r &fInvalid captcha.'
+  none: '&8[&bMoontrix&fLogin&8]&r &fNo captcha required.'
+
+misc:
+  password_changed: '&8[&bMoontrix&fLogin&8]&r &fPassword updated successfully.'
+  logout: '&8[&bMoontrix&fLogin&8]&r &fLogged out.'
+
+

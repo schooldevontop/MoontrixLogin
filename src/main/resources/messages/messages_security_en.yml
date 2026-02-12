@@ -1,9 +1,0 @@
-﻿# Security messages
-security:
-  brute_force_lock: '&8[&bMoontrix&fLogin&8]&r &fToo many attempts. Locked for %seconds%s.'
-  shadow_ban: '&8[&bMoontrix&fLogin&8]&r &fSuspicious activity detected. Please wait %seconds%s.'
-  delay_notice: '&8[&bMoontrix&fLogin&8]&r &fPlease wait %seconds%s before logging in.'
-  captcha_required: '&8[&bMoontrix&fLogin&8]&r &fCaptcha required. Use /captcha <code>.'
-  ip_mismatch: '&8[&bMoontrix&fLogin&8]&r &fSession invalidated due to IP change.'
-
-

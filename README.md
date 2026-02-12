@@ -38,9 +38,9 @@ Email templates: `plugins/MoontrixLogin/templates/`
 | `/logout` | Log out of your session |
 | `/changepassword <oldPassword> <newPassword>` | Change your password |
 | `/unregister <password>` | Delete your account |
-| `/email show|add|change|recover|setpassword` | Manage email and recover password |
+| `/email show\|add\|change\|recover\|setpassword` | Manage email and recover password |
 | `/verification <code>` | Verify email by code |
-| `/totp add|confirm|remove|code` | Manage TOTP (2FA) |
+| `/totp add\|confirm\|remove\|code` | Manage TOTP (2FA) |
 | `/captcha <code>` | Complete captcha if required |
 | `/moontrixlogin` | Core command (aliases: `/moontrix`, `/mlogin`) |
 

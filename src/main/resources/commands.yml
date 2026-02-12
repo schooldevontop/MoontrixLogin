@@ -1,0 +1,15 @@
+﻿# MoontrixLogin command events configuration
+#
+# Placeholders:
+#   %p     player name
+#   %nick  player display name
+#   %ip    player IP address
+#   %uuid  player UUID
+#
+# Example:
+# onLogin:
+#   welcome:
+#     command: 'msg %p Welcome back!'
+#     executor: PLAYER
+#
+# Supported events: onLogin, onSessionLogin, onFirstLogin, onJoin, onLogout, onRegister, onUnregister

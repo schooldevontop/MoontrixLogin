@@ -1,0 +1,137 @@
+# MoontrixLogin configuration
+
+# Account storage (MySQL or SQLite)
+storage:
+  # Choose storage type: SQLITE or MYSQL
+  type: SQLITE # SQLITE or MYSQL
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "moontrixlogin"
+    username: "root"
+    password: "password"
+    # MySQL connection pool size (higher = more connections)
+    poolSize: 10
+  sqlite:
+    # SQLite file name (stored inside the plugin folder)
+    file: "moontrixlogin.db"
+
+# Security and authentication settings
+security:
+  bcrypt:
+    # BCrypt strength (10–14 recommended; higher = more CPU usage)
+    cost: 12
+  passwordPolicy:
+    # Password length limits
+    minLength: 6
+    maxLength: 64
+    # Require at least one of each type
+    requireUppercase: false
+    requireLowercase: true
+    requireNumber: true
+    requireSymbol: false
+    # Disallow common passwords (case-insensitive)
+    blacklist:
+      - "password"
+      - "123456"
+      - "qwerty"
+  # Session timeout (seconds) after successful login
+  sessionTimeoutSeconds: 600
+  login:
+    # Max time to log in after join (seconds)
+    timeoutSeconds: 60
+    # Kick player if login time runs out
+    kickOnTimeout: true
+  session:
+    # Invalidate session if player IP changes
+    invalidateOnIpChange: true
+  bruteForce:
+    # Max failed attempts within window
+    maxAttempts: 5
+    # Window length (seconds)
+    windowSeconds: 300
+    # Lock duration after limit exceeded (seconds)
+    lockSeconds: 600
+  verification:
+    # Email verification code length
+    codeLength: 6
+    # Verification code TTL (seconds)
+    codeTtlSeconds: 600
+  captcha:
+    # Enable/disable captcha on join
+    enabled: false
+    # Captcha code length
+    codeLength: 4
+    # Captcha TTL (seconds)
+    ttlSeconds: 180
+
+# Anti-bot / anti-bruteforce behavior tuning
+antiBot:
+  # Default login delay (seconds)
+  loginDelaySeconds: 2
+  # Delay when suspicious (seconds)
+  suspiciousDelaySeconds: 5
+  # Shadow-ban duration (seconds)
+  shadowBanSeconds: 120
+  # Brute-force lock duration (seconds)
+  bruteForceLockSeconds: 600
+  # Max logins per window (per IP)
+  maxLoginPerIpWindow: 5
+  # Login window length (seconds)
+  loginWindowSeconds: 10
+  # Max new players per IP in window
+  maxNewPlayersPerIpWindow: 3
+  # New player window length (seconds)
+  newPlayerWindowSeconds: 60
+  # Max distinct names per IP in window
+  maxDistinctNamesPerIpWindow: 5
+  # Distinct name window length (seconds)
+  distinctNamesWindowSeconds: 60
+
+# Email (SMTP) for verification and recovery
+mail:
+  # Enable/disable email system
+  enabled: false
+  host: "smtp.example.com"
+  port: 587
+  username: "user@example.com"
+  password: "password"
+  from: "MoontrixLogin <noreply@example.com>"
+  # STARTTLS (usually port 587)
+  useTls: true
+  # SSL (usually port 465)
+  useSsl: false
+  # Rate limit for verification emails
+  verify:
+    maxPerWindow: 5
+    windowSeconds: 900
+    cooldownSeconds: 60
+  # Rate limit for reset code attempts (anti brute-force)
+  reset:
+    maxPerWindow: 5
+    windowSeconds: 300
+    cooldownSeconds: 300
+  # Rate limit for recovery emails
+  recover:
+    maxPerWindow: 3
+    windowSeconds: 900
+    cooldownSeconds: 60
+
+# Pre-login protection
+protection:
+  blockChatBeforeLogin: true
+  blockCommandsBeforeLogin: true
+  blockMovementBeforeLogin: true
+  # Allowed commands before login
+  allowedCommands:
+    - "login"
+    - "register"
+    - "email"
+    - "verification"
+    - "captcha"
+    - "totp"
+    - "l"
+    - "reg"
+    - "moontrixlogin"
+    - "moontrix"
+    - "mlogin"

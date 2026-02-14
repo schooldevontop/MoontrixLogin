@@ -1,8 +1,0 @@
-﻿# Common language labels
-common:
-  yes: 'Yes'
-  no: 'No'
-  enabled: 'Enabled'
-  disabled: 'Disabled'
-  required: 'Required'
-  optional: 'Optional'

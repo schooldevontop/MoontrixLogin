@@ -1,15 +1,14 @@
 ![Build](https://img.shields.io/github/actions/workflow/status/schooldevontop/MoontrixLogin/build.yml)
 ![License](https://img.shields.io/github/license/schooldevontop/MoontrixLogin)
 ![Version](https://img.shields.io/github/v/release/schooldevontop/MoontrixLogin)
-![Spigot](https://img.shields.io/badge/Spigot-1.21.x-orange)
+![Spigot](https://img.shields.io/badge/Spigot-1.8--1.21.11-orange)
 ![MoontrixLogin Banner](assets/banner.png)
-# MoontrixLogin
-
-Secure authentication plugin for Bukkit-based servers (Spigot/Paper/Purpur/Folia 1.21.x).
+Secure authentication plugin for Bukkit-based servers (Spigot/Paper/Purpur 1.8 to 1.21.11).
 
 ## Features
 - Register / login system with BCrypt password hashing
-- Session tracking with IP/UUID validation
+- Session tracking with IP/fingerprint validation
+- Signed remember-me session tokens (JWT)
 - Anti-bot and brute-force protection
 - MySQL and SQLite support
 - Email verification and password recovery
@@ -18,27 +17,28 @@ Secure authentication plugin for Bukkit-based servers (Spigot/Paper/Purpur/Folia
 
 ## Requirements
 - Java 21+
-- Spigot/Paper/Purpur/Folia 1.21.x
+- Spigot/Paper/Purpur 1.8 to 1.21.11
 
 ## Quick Start
 Drop the jar into `plugins/`, start the server, then edit `plugins/MoontrixLogin/config.yml` if needed.
 
 ## Installation
 1. Build or download the latest jar.
-2. Place `MoontrixLogin-1.0.0.jar` into `plugins/`.
+2. Place `MoontrixLogin-1.5.0-beta.jar` into `plugins/`.
 3. Start the server to generate default files.
 4. Edit `plugins/MoontrixLogin/config.yml` and restart.
 
 ## Configuration
 Main config: `plugins/MoontrixLogin/config.yml`  
 Messages: `plugins/MoontrixLogin/messages/`  
-Email templates: `plugins/MoontrixLogin/templates/`
+Email templates: `plugins/MoontrixLogin/templates/`  
+Security hardening guide: `docs/HARDENING_GUIDE.md`
 
 ## Commands
 | Command | Description |
 |---|---|
 | `/register <password> <verifyPassword>` | Register a new account |
-| `/login <password> [totp]` | Log in to your account |
+| `/login <password> [totp] [remember]` | Log in to your account |
 | `/logout` | Log out of your session |
 | `/changepassword <oldPassword> <newPassword>` | Change your password |
 | `/unregister <password>` | Delete your account |

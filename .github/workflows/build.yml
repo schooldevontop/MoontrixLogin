@@ -21,9 +21,20 @@ jobs:
       - name: Build
         run: |
           set -e
-          POM_PATH="$(find . -maxdepth 4 -name pom.xml -print -quit)"
+          if [ -f "./pom.xml" ]; then
+            echo "Using pom.xml at repository root"
+            if [ -f "./mvnw" ]; then
+              chmod +x ./mvnw
+              ./mvnw -q -DskipTests package
+            else
+              mvn -q -DskipTests package
+            fi
+            exit 0
+          fi
+
+          POM_PATH="$(find . -name pom.xml -print -quit)"
           if [ -z "$POM_PATH" ]; then
-            echo "No pom.xml found"
+            echo "No pom.xml found in repository"
             exit 1
           fi
           POM_DIR="$(dirname "$POM_PATH")"

@@ -39,8 +39,19 @@ jobs:
             mvn -q -DskipTests package
           fi
 
+      - name: Prepare Release Jar
+        run: |
+          set -e
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          JAR_PATH="$(find . -path '*/target/moontrixlogin-*.jar' ! -name 'original-*.jar' -print -quit)"
+          if [ -z "$JAR_PATH" ]; then
+            echo "No release jar found"
+            exit 1
+          fi
+          cp "$JAR_PATH" "MoontrixLogin-${TAG_VERSION}.jar"
+
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            **/target/*.jar
+            MoontrixLogin-*.jar

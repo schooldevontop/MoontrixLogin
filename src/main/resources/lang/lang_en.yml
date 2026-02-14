@@ -1,0 +1,8 @@
+﻿# Common language labels
+common:
+  yes: '&aYes'
+  no: '&cNo'
+  enabled: '&aEnabled'
+  disabled: '&cDisabled'
+  required: '&eRequired'
+  optional: '&7Optional'

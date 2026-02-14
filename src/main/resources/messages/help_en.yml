@@ -1,0 +1,93 @@
+﻿# Help messages for MoontrixLogin
+common:
+  header: '&8[&bMoontrixLogin&8]&f &bHelp Menu'
+  optional: '&7Optional'
+  hasPermission: '&aPermission Granted'
+  noPermission: '&cInsufficient Permission'
+  default: '&7Default'
+  result: '&fResult'
+  defaultPermissions:
+    notAllowed: '&cNot Allowed'
+    opOnly: '&6OP Only'
+    allowed: '&aAvailable to All Players'
+
+section:
+  command: '&eCommand'
+  description: '&eDescription'
+  detailedDescription: '&eDetails'
+  arguments: '&eArguments'
+  permissions: '&ePermissions'
+  alternatives: '&eAliases'
+  children: '&eSubcommands'
+
+commands:
+  moontrixlogin:
+    description: '&fMain command of MoontrixLogin.'
+    details: '&7Displays all core authentication management commands.'
+    arguments: '&7None'
+    permissions: '&7None'
+    alternatives: '&7/moontrix, /mlogin'
+    example: '&eExample: &f/moontrixlogin'
+  login:
+    description: '&fLog into your registered account.'
+    details: '&7Authenticate using your password and optional TOTP code if enabled.'
+    arguments: '&e<password> &7[totp]'
+    permissions: '&bmoontrixlogin.player.login'
+    alternatives: '&7/l, /log'
+    example: '&eExample: &f/login MyPassword123'
+  register:
+    description: '&fCreate a new account.'
+    details: '&7Register using a password and confirmation.'
+    arguments: '&e<password> <verifyPassword>'
+    permissions: '&bmoontrixlogin.player.register'
+    alternatives: '&7/reg'
+    example: '&eExample: &f/register MyPassword123 MyPassword123'
+  logout:
+    description: '&fLog out of your current session.'
+    details: '&7Terminate your authenticated session immediately.'
+    arguments: '&7None'
+    permissions: '&bmoontrixlogin.player.logout'
+    alternatives: '&7None'
+    example: '&eExample: &f/logout'
+  changepassword:
+    description: '&fUpdate your account password.'
+    details: '&7Change password after confirming your current password.'
+    arguments: '&e<oldPassword> <newPassword>'
+    permissions: '&bmoontrixlogin.player.changepassword'
+    alternatives: '&7/changepass, /cp'
+    example: '&eExample: &f/changepassword OldPass123 NewPass456'
+  unregister:
+    description: '&cPermanently delete your account.'
+    details: '&7Remove account after password verification.'
+    arguments: '&e<password>'
+    permissions: '&bmoontrixlogin.player.unregister'
+    alternatives: '&7/unreg'
+    example: '&eExample: &f/unregister MyPassword123'
+  email:
+    description: '&fManage email and recovery options.'
+    details: '&7View, add, change email or recover password using email verification.'
+    arguments: '&eshow &7| &eadd &7| &echange &7| &erecover &7| &esetpassword'
+    permissions: '&bmoontrixlogin.player.email.*'
+    alternatives: '&7None'
+    example: '&eExample: &f/email add user@example.com'
+  totp:
+    description: '&6Two-Factor Authentication (TOTP).'
+    details: '&7Enable, confirm, remove or verify authentication codes.'
+    arguments: '&eadd &7| &econfirm &7| &eremove &7| &ecode'
+    permissions: '&bmoontrixlogin.player.totpadd &7/ &bmoontrixlogin.player.totpremove'
+    alternatives: '&7/2fa'
+    example: '&eExample: &f/totp add'
+  captcha:
+    description: '&fCaptcha verification system.'
+    details: '&7Enter the required captcha code to continue.'
+    arguments: '&e<captcha>'
+    permissions: '&bmoontrixlogin.player.captcha'
+    alternatives: '&7None'
+    example: '&eExample: &f/captcha 1234'
+  verification:
+    description: '&fVerify your email address.'
+    details: '&7Confirm your email using the provided verification code.'
+    arguments: '&e<code>'
+    permissions: '&bmoontrixlogin.player.security.verificationcode'
+    alternatives: '&7None'
+    example: '&eExample: &f/verification 123456'

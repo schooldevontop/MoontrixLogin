@@ -1,0 +1,7 @@
+﻿# Security messages
+security:
+  brute_force_lock: '&8[&bMoontrixLogin&8] &cToo many failed attempts. Account locked for &f%seconds%&c seconds.'
+  shadow_ban: '&8[&bMoontrixLogin&8] &6Suspicious activity detected. Access temporarily restricted for &f%seconds%&6 seconds.'
+  delay_notice: '&8[&bMoontrixLogin&8] &eLogin cooldown active. Please wait &f%seconds%&e seconds before trying again.'
+  captcha_required: '&8[&bMoontrixLogin&8] &eSecurity verification required. &fUse: /captcha <code>'
+  ip_mismatch: '&8[&bMoontrixLogin&8] &cSession terminated due to IP address change.'

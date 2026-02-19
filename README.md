@@ -1,7 +1,8 @@
 ![Build](https://img.shields.io/github/actions/workflow/status/schooldevontop/MoontrixLogin/build.yml)
 ![License](https://img.shields.io/github/license/schooldevontop/MoontrixLogin)
 ![Version](https://img.shields.io/github/v/release/schooldevontop/MoontrixLogin)
-![Spigot](https://img.shields.io/badge/Spigot-1.8--1.21.11-orange)
+![Bukkit-family](https://img.shields.io/badge/Bukkit--family-1.8--1.21.11-orange)
+![Java](https://img.shields.io/badge/Java-8%2B-blue)
 ![Folia](https://img.shields.io/badge/Folia-Runtime%20Smoke--Tested-yellow)
 ![MoontrixLogin Banner](assets/banner.png)
 # MoontrixLogin

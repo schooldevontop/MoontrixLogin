@@ -2,8 +2,12 @@
 ![License](https://img.shields.io/github/license/schooldevontop/MoontrixLogin)
 ![Version](https://img.shields.io/github/v/release/schooldevontop/MoontrixLogin)
 ![Spigot](https://img.shields.io/badge/Spigot-1.8--1.21.11-orange)
+![Folia](https://img.shields.io/badge/Folia-Runtime%20Smoke--Tested-yellow)
 ![MoontrixLogin Banner](assets/banner.png)
-Secure authentication plugin for Bukkit-based servers (Spigot/Paper/Purpur 1.8 to 1.21.11).
+# MoontrixLogin
+
+Secure authentication plugin for Bukkit-based servers (Bukkit/Spigot/Paper/Purpur/Pufferfish/Folia 1.8 to 1.21.11).
+Paper, Purpur, and Folia are runtime-smoke-tested in CI (Folia runtime uses 1.20.1 in CI).
 
 ## Features
 - Register / login system with BCrypt password hashing
@@ -16,15 +20,16 @@ Secure authentication plugin for Bukkit-based servers (Spigot/Paper/Purpur 1.8 t
 - Fully configurable messages and rules
 
 ## Requirements
-- Java 21+
-- Spigot/Paper/Purpur 1.8 to 1.21.11
+- Java 8+
+- Bukkit/Spigot/Paper/Purpur/Pufferfish 1.8 to 1.21.11
+- Folia compatibility is runtime-smoke-tested on 1.20.1 in CI, and compile-verified by API profile
 
 ## Quick Start
 Drop the jar into `plugins/`, start the server, then edit `plugins/MoontrixLogin/config.yml` if needed.
 
 ## Installation
 1. Build or download the latest jar.
-2. Place `MoontrixLogin-1.5.0-beta.jar` into `plugins/`.
+2. Place `MoontrixLogin-1.5.0.jar` into `plugins/`.
 3. Start the server to generate default files.
 4. Edit `plugins/MoontrixLogin/config.yml` and restart.
 
@@ -34,10 +39,15 @@ Messages: `plugins/MoontrixLogin/messages/`
 Email templates: `plugins/MoontrixLogin/templates/`  
 Security hardening guide: `docs/HARDENING_GUIDE.md`
 
+### Language
+- Set `language` in `config.yml` to choose message language.
+- Supported values: `en`, `vi`
+- Files: `messages/messages_en.yml`, `messages/messages_vi.yml`
+
 ## Commands
 | Command | Description |
 |---|---|
-| `/register <password> <verifyPassword>` | Register a new account |
+| `/register <password> [verifyPassword]` | Register a new account |
 | `/login <password> [totp] [remember]` | Log in to your account |
 | `/logout` | Log out of your session |
 | `/changepassword <oldPassword> <newPassword>` | Change your password |
@@ -73,6 +83,10 @@ mvnw.cmd -q -DskipTests package
 ## CI / Release
 GitHub Actions workflows are included:
 - CI on push/PR to `main`
+- Compatibility matrix on push/PR/manual:
+  JDK 8/11/17/21 with API profiles (Bukkit, Spigot, Paper, Purpur, Pufferfish, Folia)
+- Runtime smoke-test on push/PR/manual:
+  headless startup validation on Paper, Purpur, and Folia (plugin load + enable log check)
 - Release on tags `v*` (uploads jar to GitHub Release)
 
 ## License

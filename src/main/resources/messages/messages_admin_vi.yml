@@ -1,0 +1,11 @@
+# Tin nhắn quản trị viên
+admin:
+  reload_start: '&8[&bMoontrixLogin&8] &eĐang tải lại cấu hình plugin...'
+  reload_done: '&8[&bMoontrixLogin&8] &aCấu hình đã được tải lại thành công.'
+  user_not_found: '&8[&bMoontrixLogin&8] &cKhông tìm thấy người dùng.'
+  force_login: '&8[&bMoontrixLogin&8] &aĐã buộc đăng nhập thành công cho &f%player%&a.'
+  force_logout: '&8[&bMoontrixLogin&8] &eĐã buộc đăng xuất thành công cho &f%player%&e.'
+  info_header: '&8[&bMoontrixLogin&8] &eThông tin tài khoản của &f%player%'
+  info_uuid: '&7UUID: &f%uuid%'
+  info_last_ip: '&7Địa chỉ IP lần cuối: &f%ip%'
+  info_last_login: '&7Thời gian đăng nhập lần cuối: &f%time%'

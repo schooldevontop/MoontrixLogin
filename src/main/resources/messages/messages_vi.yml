@@ -1,0 +1,79 @@
+# Tin nhắn MoontrixLogin
+registration:
+  register_request: '&8[&bMoontrixLogin&8] &eVui lòng đăng ký bằng: &f/register <mật khẩu> [xác nhận mật khẩu]'
+  command_usage: '&8[&bMoontrixLogin&8] &eCách dùng: &f/register <mật khẩu> [xác nhận mật khẩu]'
+  success: '&8[&bMoontrixLogin&8] &aĐăng ký tài khoản thành công.'
+  disabled: '&8[&bMoontrixLogin&8] &cĐăng ký tài khoản hiện đang bị tắt.'
+  name_taken: '&8[&bMoontrixLogin&8] &cTài khoản này đã được đăng ký.'
+
+password:
+  match_error: '&8[&bMoontrixLogin&8] &cMật khẩu không khớp.'
+  unsafe_password: '&8[&bMoontrixLogin&8] &cMật khẩu không đáp ứng yêu cầu bảo mật.'
+  wrong_length: '&8[&bMoontrixLogin&8] &cĐộ dài mật khẩu không hợp lệ.'
+  blacklisted: '&8[&bMoontrixLogin&8] &cMật khẩu này không được phép sử dụng.'
+
+login:
+  command_usage: '&8[&bMoontrixLogin&8] &eCách dùng: &f/login <mật khẩu> [totp] [remember]'
+  wrong_password: '&8[&bMoontrixLogin&8] &cSai mật khẩu.'
+  success: '&8[&bMoontrixLogin&8] &aĐăng nhập thành công.'
+  login_request: '&8[&bMoontrixLogin&8] &eVui lòng đăng nhập bằng: &f/login <mật khẩu>'
+  timeout_error: '&8[&bMoontrixLogin&8] &cPhiên đăng nhập đã hết thời gian.'
+
+error:
+  unregistered_user: '&8[&bMoontrixLogin&8] &cTài khoản này chưa được đăng ký.'
+  denied_command: '&8[&bMoontrixLogin&8] &cBạn phải đăng nhập trước khi dùng lệnh này.'
+  denied_chat: '&8[&bMoontrixLogin&8] &cBạn phải đăng nhập trước khi chat.'
+  not_logged_in: '&8[&bMoontrixLogin&8] &cBạn chưa đăng nhập.'
+  no_permission: '&8[&bMoontrixLogin&8] &cBạn không có quyền thực hiện hành động này.'
+  unexpected_error: '&8[&bMoontrixLogin&8] &cĐã xảy ra lỗi không mong muốn.'
+  login_wait: '&8[&bMoontrixLogin&8] &eQuá nhiều lần đăng nhập thất bại. Vui lòng chờ.'
+  ip_changed: '&8[&bMoontrixLogin&8] &cPhiên đăng nhập đã bị hủy do địa chỉ IP thay đổi.'
+  shadow_ban: '&8[&bMoontrixLogin&8] &6Đăng nhập tạm thời bị hạn chế do hoạt động đáng ngờ.'
+
+unregister:
+  success: '&8[&bMoontrixLogin&8] &aTài khoản của bạn đã bị xóa vĩnh viễn.'
+  command_usage: '&8[&bMoontrixLogin&8] &eCách dùng: &f/unregister <mật khẩu>'
+
+email:
+  added: '&8[&bMoontrixLogin&8] &aĐã gửi mã xác minh. &eDùng: &f/verification <mã>'
+  changed: '&8[&bMoontrixLogin&8] &aEmail đã được xác minh và cập nhật thành công.'
+  recover: '&8[&bMoontrixLogin&8] &aĐã gửi mã khôi phục. &eDùng: &f/email setpassword <mã> <mật khẩu mới>'
+  verify_rate_limited: '&8[&bMoontrixLogin&8] &eQuá nhiều yêu cầu xác minh. Thử lại sau &f%seconds% &egiây.'
+  recover_rate_limited: '&8[&bMoontrixLogin&8] &eQuá nhiều yêu cầu khôi phục. Thử lại sau &f%seconds% &egiây.'
+  reset_rate_limited: '&8[&bMoontrixLogin&8] &eQuá nhiều lần đặt lại mật khẩu. Thử lại sau &f%seconds% &egiây.'
+  reset_success: '&8[&bMoontrixLogin&8] &aĐặt lại mật khẩu thành công.'
+  reset_failed: '&8[&bMoontrixLogin&8] &cMã đặt lại không hợp lệ hoặc đã hết hạn.'
+  mail_disabled: '&8[&bMoontrixLogin&8] &cDịch vụ email hiện đang bị tắt.'
+
+captcha:
+  message: '&8[&bMoontrixLogin&8] &eMã captcha: &f%code%'
+  required: '&8[&bMoontrixLogin&8] &eYêu cầu xác minh bổ sung. Hãy hoàn thành captcha trước khi tiếp tục.'
+  success: '&8[&bMoontrixLogin&8] &aXác minh captcha thành công.'
+  failed: '&8[&bMoontrixLogin&8] &cMã captcha không hợp lệ.'
+  none: '&8[&bMoontrixLogin&8] &7Không yêu cầu captcha.'
+
+misc:
+  password_changed: '&8[&bMoontrixLogin&8] &aCập nhật mật khẩu thành công.'
+  logout: '&8[&bMoontrixLogin&8] &aBạn đã đăng xuất.'
+
+common_labels:
+  yes: '&aCó'
+  no: '&cKhông'
+  enabled: '&aBật'
+  disabled: '&cTắt'
+  required: '&eBắt buộc'
+  optional: '&7Tùy chọn'
+
+admin:
+  reload_start: '&8[&bMoontrixLogin&8] &eĐang tải lại cấu hình plugin...'
+  reload_done: '&8[&bMoontrixLogin&8] &aCấu hình đã được tải lại thành công.'
+  reload_failed: '&8[&bMoontrixLogin&8] &cTải lại cấu hình thất bại: &f%reason%'
+  user_not_found: '&8[&bMoontrixLogin&8] &cKhông tìm thấy người dùng.'
+  force_login: '&8[&bMoontrixLogin&8] &aĐã buộc đăng nhập thành công cho &f%player%&a.'
+  force_logout: '&8[&bMoontrixLogin&8] &eĐã buộc đăng xuất thành công cho &f%player%&e.'
+  info_header: '&8[&bMoontrixLogin&8] &eThông tin tài khoản của &f%player%'
+  info_uuid: '&7UUID: &f%uuid%'
+  info_last_ip: '&7Địa chỉ IP lần cuối: &f%ip%'
+  info_last_login: '&7Thời gian đăng nhập lần cuối: &f%time%'
+  info_state: '&7Trạng thái phiên: &f%state%'
+  info_email: '&7Email: &f%email%'

@@ -1,0 +1,7 @@
+# Tin nhắn bảo mật
+security:
+  brute_force_lock: '&8[&bMoontrixLogin&8] &cQuá nhiều lần đăng nhập thất bại. Tài khoản bị khóa trong &f%seconds%&c giây.'
+  shadow_ban: '&8[&bMoontrixLogin&8] &6Phát hiện hoạt động đáng ngờ. Quyền truy cập bị hạn chế tạm thời trong &f%seconds%&6 giây.'
+  delay_notice: '&8[&bMoontrixLogin&8] &eĐang trong thời gian chờ đăng nhập. Vui lòng chờ &f%seconds%&e giây trước khi thử lại.'
+  captcha_required: '&8[&bMoontrixLogin&8] &eYêu cầu xác minh bảo mật. &fDùng: /captcha <mã>'
+  ip_mismatch: '&8[&bMoontrixLogin&8] &cPhiên đăng nhập đã bị hủy do địa chỉ IP thay đổi.'

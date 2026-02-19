@@ -1,0 +1,197 @@
+# MoontrixLogin configuration
+# IMPORTANT: Set MOONTRIX_JWT_SECRET (>= 32 chars) before starting the server.
+# If JWT secret is missing or too short, MoontrixLogin disables itself at startup.
+
+# Language file to use in plugins/MoontrixLogin/messages/
+# Supported: en, vi
+language: "en"
+
+# Account storage (MySQL or SQLite)
+storage:
+  # Choose storage type: SQLITE or MYSQL
+  type: SQLITE # SQLITE or MYSQL
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "moontrixlogin"
+    username: "root"
+    # Supported secret formats:
+    # ${ENV:MOONTRIX_DB_PASSWORD}
+    # ${AES_GCM:BASE64_PAYLOAD}
+    # ${VAULT:secret/data/moontrixlogin#db_password}
+    password: "${ENV:MOONTRIX_DB_PASSWORD}"
+    passwordEnv: "MOONTRIX_DB_PASSWORD"
+    # MySQL connection pool size (higher = more connections)
+    poolSize: 50
+    minimumIdle: 8
+    connectionTimeoutMs: 15000
+    idleTimeoutMs: 300000
+    maxLifetimeMs: 1800000
+    leakDetectionThresholdMs: 2000
+  cache:
+    enabled: true
+    ttlSeconds: 60
+    maxEntries: 10000
+  sqlite:
+    # SQLite file name (stored inside the plugin folder)
+    file: "moontrixlogin.db"
+
+# Security and authentication settings
+security:
+  bcrypt:
+    # BCrypt strength (10-14 recommended; higher = more CPU usage)
+    cost: 12
+  passwordPolicy:
+    # Password length limits
+    minLength: 6
+    maxLength: 64
+    # Require at least one of each type
+    requireUppercase: false
+    requireLowercase: true
+    requireNumber: true
+    requireSymbol: false
+    # Disallow common passwords (case-insensitive)
+    blacklist:
+      - "password"
+      - "123456"
+      - "qwerty"
+  # Session timeout (seconds) after successful login
+  sessionTimeoutSeconds: 600
+  login:
+    # Max time to log in after join (seconds)
+    timeoutSeconds: 60
+    # Kick player if login time runs out
+    kickOnTimeout: true
+  session:
+    # Invalidate session if player IP changes
+    invalidateOnIpChange: true
+    ipPrefixSegments: 3
+    rememberMe:
+      enabled: true
+      ttlDays: 30
+    jwt:
+      issuer: "MoontrixLogin"
+      # REQUIRED: keep this value bound to MOONTRIX_JWT_SECRET in production.
+      # If empty, unresolved, or < 32 chars, plugin startup will fail and disable itself.
+      secret: "${ENV:MOONTRIX_JWT_SECRET}"
+      secretEnv: "MOONTRIX_JWT_SECRET"
+  bruteForce:
+    # Max failed attempts within window
+    maxAttempts: 5
+    # Window length (seconds)
+    windowSeconds: 300
+    # Lock duration after limit exceeded (seconds)
+    lockSeconds: 3600
+    progressiveLockSeconds:
+      - 3600
+      - 86400
+      - 604800
+      - 0
+  verification:
+    # Email verification code length
+    codeLength: 6
+    # Verification code TTL (seconds)
+    codeTtlSeconds: 600
+  captcha:
+    # Enable/disable captcha on join
+    enabled: false
+    # Captcha code length
+    codeLength: 4
+    # Captcha TTL (seconds)
+    ttlSeconds: 180
+
+# Anti-bot / anti-bruteforce behavior tuning
+antiBot:
+  # Default login delay (seconds)
+  loginDelaySeconds: 2
+  # Delay when suspicious (seconds)
+  suspiciousDelaySeconds: 5
+  # Shadow-ban duration (seconds)
+  shadowBanSeconds: 120
+  # Brute-force lock duration (seconds)
+  bruteForceLockSeconds: 3600
+  # Max logins per window (per IP)
+  maxLoginPerIpWindow: 5
+  # Login window length (seconds)
+  loginWindowSeconds: 10
+  # Max new players per IP in window
+  maxNewPlayersPerIpWindow: 3
+  # New player window length (seconds)
+  newPlayerWindowSeconds: 60
+  # Max distinct names per IP in window
+  maxDistinctNamesPerIpWindow: 5
+  # Distinct name window length (seconds)
+  distinctNamesWindowSeconds: 60
+  adaptiveCaptcha:
+    enabled: true
+  deviceFingerprint:
+    banThreshold: 20
+  abuseIpDb:
+    # Optional third-party reputation check.
+    # Fail-open strategy: when API times out / rate-limits / errors, plugin treats IP as NOT suspicious.
+    enabled: false
+    apiKey: "${ENV:MOONTRIX_ABUSEIPDB_API_KEY}"
+    apiKeyEnv: "MOONTRIX_ABUSEIPDB_API_KEY"
+    minConfidenceScore: 85
+    # Successful lookup cache TTL.
+    cacheSeconds: 3600
+    # Keep short-lived negative cache on API failures to prevent hammering AbuseIPDB.
+    failureBackoffSeconds: 120
+    # HTTP request timeout for AbuseIPDB API calls.
+    requestTimeoutMs: 4000
+    # maxAgeInDays query parameter sent to AbuseIPDB.
+    maxAgeDays: 30
+
+# Email (SMTP) for verification and recovery
+mail:
+  # Enable/disable email system
+  enabled: false
+  host: "smtp.example.com"
+  port: 587
+  username: "user@example.com"
+  password: "${ENV:MOONTRIX_SMTP_PASSWORD}"
+  passwordEnv: "MOONTRIX_SMTP_PASSWORD"
+  from: "MoontrixLogin <noreply@example.com>"
+  # STARTTLS (usually port 587)
+  useTls: true
+  # SSL (usually port 465)
+  useSsl: false
+  # Rate limit for verification emails
+  verify:
+    maxPerWindow: 5
+    windowSeconds: 900
+    cooldownSeconds: 60
+  # Rate limit for reset code attempts (anti brute-force)
+  reset:
+    maxPerWindow: 5
+    windowSeconds: 300
+    cooldownSeconds: 300
+  # Rate limit for recovery emails
+  recover:
+    maxPerWindow: 3
+    windowSeconds: 900
+    cooldownSeconds: 60
+
+# Pre-login protection
+protection:
+  blockChatBeforeLogin: true
+  blockCommandsBeforeLogin: true
+  blockMovementBeforeLogin: true
+  # Allowed commands before login
+  allowedCommands:
+    - "login"
+    - "register"
+    - "email"
+    - "verification"
+    - "captcha"
+    - "totp"
+    - "l"
+    - "reg"
+    - "moontrixlogin"
+    - "moontrix"
+    - "mlogin"
+
+# Registration behavior
+registration:
+  enabled: true
+  requireConfirmation: true

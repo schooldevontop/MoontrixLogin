@@ -1,0 +1,93 @@
+# Thông báo trợ giúp cho MoontrixLogin
+common:
+  header: '&8[&bMoontrixLogin&8] &bMenu Trợ Giúp'
+  optional: '&7Tùy chọn'
+  hasPermission: '&aĐã có quyền'
+  noPermission: '&cKhông có quyền'
+  default: '&7Mặc định'
+  result: '&fKết quả'
+  defaultPermissions:
+    notAllowed: '&cKhông được phép'
+    opOnly: '&6Chỉ dành cho OP'
+    allowed: '&aÁp dụng cho tất cả người chơi'
+
+section:
+  command: '&eLệnh'
+  description: '&eMô tả'
+  detailedDescription: '&eChi tiết'
+  arguments: '&eTham số'
+  permissions: '&eQuyền'
+  alternatives: '&eLệnh thay thế'
+  children: '&eLệnh con'
+
+commands:
+  moontrixlogin:
+    description: '&fLệnh chính của MoontrixLogin.'
+    details: '&7Quản trị viên: force_login, force_logout, info, reload.'
+    arguments: '&eforce_login|force_logout|info|reload [người chơi]'
+    permissions: '&bmoontrixlogin.admin.*'
+    alternatives: '&7/moontrix, /mlogin'
+    example: '&eVí dụ: &f/moontrixlogin'
+  login:
+    description: '&fĐăng nhập vào tài khoản của bạn.'
+    details: '&7Xác thực bằng mật khẩu và mã TOTP (nếu đã bật).'
+    arguments: '&e<mật khẩu> &7[totp]'
+    permissions: '&bmoontrixlogin.player.login'
+    alternatives: '&7/l, /log'
+    example: '&eVí dụ: &f/login MatKhau123'
+  register:
+    description: '&fTạo tài khoản mới.'
+    details: '&7Đăng ký bằng mật khẩu; xác nhận mật khẩu có thể được yêu cầu tùy cấu hình.'
+    arguments: '&e<mật khẩu> [xác nhận mật khẩu]'
+    permissions: '&bmoontrixlogin.player.register'
+    alternatives: '&7/reg'
+    example: '&eVí dụ: &f/register MatKhau123 MatKhau123'
+  logout:
+    description: '&fĐăng xuất khỏi phiên hiện tại.'
+    details: '&7Kết thúc phiên đăng nhập ngay lập tức.'
+    arguments: '&7Không có'
+    permissions: '&bmoontrixlogin.player.logout'
+    alternatives: '&7Không có'
+    example: '&eVí dụ: &f/logout'
+  changepassword:
+    description: '&fCập nhật mật khẩu tài khoản.'
+    details: '&7Đổi mật khẩu sau khi xác nhận mật khẩu hiện tại.'
+    arguments: '&e<mật khẩu cũ> <mật khẩu mới>'
+    permissions: '&bmoontrixlogin.player.changepassword'
+    alternatives: '&7/changepass, /cp'
+    example: '&eVí dụ: &f/changepassword MatKhauCu123 MatKhauMoi456'
+  unregister:
+    description: '&cXóa tài khoản vĩnh viễn.'
+    details: '&7Xóa tài khoản sau khi xác minh mật khẩu.'
+    arguments: '&e<mật khẩu>'
+    permissions: '&bmoontrixlogin.player.unregister'
+    alternatives: '&7/unreg'
+    example: '&eVí dụ: &f/unregister MatKhau123'
+  email:
+    description: '&fQuản lý email và tùy chọn khôi phục.'
+    details: '&7Xem, thêm, đổi email hoặc khôi phục mật khẩu qua xác minh email.'
+    arguments: '&eshow &7| &eadd &7| &echange &7| &erecover &7| &esetpassword'
+    permissions: '&bmoontrixlogin.player.email.*'
+    alternatives: '&7Không có'
+    example: '&eVí dụ: &f/email add nguoidung@example.com'
+  totp:
+    description: '&6Xác thực hai lớp (TOTP).'
+    details: '&7Bật, xác nhận, xóa hoặc xác minh mã xác thực.'
+    arguments: '&eadd &7| &econfirm &7| &eremove &7| &ecode'
+    permissions: '&bmoontrixlogin.player.totpadd &7/ &bmoontrixlogin.player.totpremove'
+    alternatives: '&7/2fa'
+    example: '&eVí dụ: &f/totp add'
+  captcha:
+    description: '&fHệ thống xác minh captcha.'
+    details: '&7Nhập mã captcha yêu cầu để tiếp tục.'
+    arguments: '&e<captcha>'
+    permissions: '&bmoontrixlogin.player.captcha'
+    alternatives: '&7Không có'
+    example: '&eVí dụ: &f/captcha 1234'
+  verification:
+    description: '&fXác minh địa chỉ email.'
+    details: '&7Xác nhận email bằng mã xác minh đã được gửi.'
+    arguments: '&e<mã>'
+    permissions: '&bmoontrixlogin.player.security.verificationcode'
+    alternatives: '&7Không có'
+    example: '&eVí dụ: &f/verification 123456'

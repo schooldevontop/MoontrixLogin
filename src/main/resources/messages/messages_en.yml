@@ -1,0 +1,79 @@
+# MoontrixLogin messages
+registration:
+  register_request: '&8[&bMoontrixLogin&8] &ePlease register using: &f/register <password> [verifyPassword]'
+  command_usage: '&8[&bMoontrixLogin&8] &eUsage: &f/register <password> [verifyPassword]'
+  success: '&8[&bMoontrixLogin&8] &aRegistration completed successfully.'
+  disabled: '&8[&bMoontrixLogin&8] &cRegistration is currently disabled.'
+  name_taken: '&8[&bMoontrixLogin&8] &cThis account is already registered.'
+
+password:
+  match_error: '&8[&bMoontrixLogin&8] &cPasswords do not match.'
+  unsafe_password: '&8[&bMoontrixLogin&8] &cPassword does not meet security requirements.'
+  wrong_length: '&8[&bMoontrixLogin&8] &cPassword length is invalid.'
+  blacklisted: '&8[&bMoontrixLogin&8] &cThis password is not allowed.'
+
+login:
+  command_usage: '&8[&bMoontrixLogin&8] &eUsage: &f/login <password> [totp] [remember]'
+  wrong_password: '&8[&bMoontrixLogin&8] &cIncorrect password.'
+  success: '&8[&bMoontrixLogin&8] &aLogin successful.'
+  login_request: '&8[&bMoontrixLogin&8] &ePlease log in using: &f/login <password>'
+  timeout_error: '&8[&bMoontrixLogin&8] &cLogin session timed out.'
+
+error:
+  unregistered_user: '&8[&bMoontrixLogin&8] &cThis account is not registered.'
+  denied_command: '&8[&bMoontrixLogin&8] &cYou must log in before using this command.'
+  denied_chat: '&8[&bMoontrixLogin&8] &cYou must log in before chatting.'
+  not_logged_in: '&8[&bMoontrixLogin&8] &cYou are not logged in.'
+  no_permission: '&8[&bMoontrixLogin&8] &cYou do not have permission to perform this action.'
+  unexpected_error: '&8[&bMoontrixLogin&8] &cAn unexpected error occurred.'
+  login_wait: '&8[&bMoontrixLogin&8] &eToo many login attempts. Please wait.'
+  ip_changed: '&8[&bMoontrixLogin&8] &cSession invalidated due to IP address change.'
+  shadow_ban: '&8[&bMoontrixLogin&8] &6Login temporarily restricted due to suspicious activity.'
+
+unregister:
+  success: '&8[&bMoontrixLogin&8] &aYour account has been permanently deleted.'
+  command_usage: '&8[&bMoontrixLogin&8] &eUsage: &f/unregister <password>'
+
+email:
+  added: '&8[&bMoontrixLogin&8] &aVerification code sent. &eUse: &f/verification <code>'
+  changed: '&8[&bMoontrixLogin&8] &aEmail successfully verified and updated.'
+  recover: '&8[&bMoontrixLogin&8] &aRecovery code sent. &eUse: &f/email setpassword <code> <newPassword>'
+  verify_rate_limited: '&8[&bMoontrixLogin&8] &eToo many verification requests. Try again in &f%seconds% &eseconds.'
+  recover_rate_limited: '&8[&bMoontrixLogin&8] &eToo many recovery requests. Try again in &f%seconds% &eseconds.'
+  reset_rate_limited: '&8[&bMoontrixLogin&8] &eToo many reset attempts. Try again in &f%seconds% &eseconds.'
+  reset_success: '&8[&bMoontrixLogin&8] &aPassword reset successfully.'
+  reset_failed: '&8[&bMoontrixLogin&8] &cThe reset code is invalid or has expired.'
+  mail_disabled: '&8[&bMoontrixLogin&8] &cEmail service is currently disabled.'
+
+captcha:
+  message: '&8[&bMoontrixLogin&8] &eCaptcha code: &f%code%'
+  required: '&8[&bMoontrixLogin&8] &eAdditional verification required. Complete captcha before continuing.'
+  success: '&8[&bMoontrixLogin&8] &aCaptcha verified successfully.'
+  failed: '&8[&bMoontrixLogin&8] &cInvalid captcha code.'
+  none: '&8[&bMoontrixLogin&8] &7No captcha required.'
+
+misc:
+  password_changed: '&8[&bMoontrixLogin&8] &aPassword updated successfully.'
+  logout: '&8[&bMoontrixLogin&8] &aYou have logged out.'
+
+common_labels:
+  yes: '&aYes'
+  no: '&cNo'
+  enabled: '&aEnabled'
+  disabled: '&cDisabled'
+  required: '&eRequired'
+  optional: '&7Optional'
+
+admin:
+  reload_start: '&8[&bMoontrixLogin&8] &eReloading plugin configuration...'
+  reload_done: '&8[&bMoontrixLogin&8] &aConfiguration successfully reloaded.'
+  reload_failed: '&8[&bMoontrixLogin&8] &cConfiguration reload failed: &f%reason%'
+  user_not_found: '&8[&bMoontrixLogin&8] &cUser not found.'
+  force_login: '&8[&bMoontrixLogin&8] &aSuccessfully forced login for &f%player%&a.'
+  force_logout: '&8[&bMoontrixLogin&8] &eSuccessfully forced logout for &f%player%&e.'
+  info_header: '&8[&bMoontrixLogin&8] &eAccount information for &f%player%'
+  info_uuid: '&7UUID: &f%uuid%'
+  info_last_ip: '&7Last IP Address: &f%ip%'
+  info_last_login: '&7Last Login Time: &f%time%'
+  info_state: '&7Session State: &f%state%'
+  info_email: '&7Email: &f%email%'
